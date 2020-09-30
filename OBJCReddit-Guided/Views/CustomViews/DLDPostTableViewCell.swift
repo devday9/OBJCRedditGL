@@ -27,6 +27,6 @@ class DLDPostTableViewCell: UITableViewCell {
         guard let post = post else {return}
         titleLabel.text = post.title
         commentCountLabel.text = "\(post.commentCount) 💬"
-        upvoteCountLabel.text = "\(post.ups) ⬆️"
+        upvoteCountLabel.text = "\(post.ups) ⬆︎"
     }
 }//END OF CLASS
