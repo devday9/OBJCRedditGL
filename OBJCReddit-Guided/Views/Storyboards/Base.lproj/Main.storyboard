@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3jc-a3-39G">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Post List Table View Controller-->
+        <scene sceneID="IHw-f6-Ffi">
+            <objects>
+                <tableViewController id="3jc-a3-39G" customClass="DLDPostListTableViewController" customModule="OBJCReddit_Guided" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2SB-7P-UVW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search for a subreddit!" id="JG8-Hy-2np">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="203" id="MfL-O8-C7p" customClass="DLDPostTableViewCell" customModule="OBJCReddit_Guided" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="414" height="203"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MfL-O8-C7p" id="eLs-6A-Hgd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="203"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-Uz-lxM">
+                                            <rect key="frame" x="8" y="0.0" width="398" height="203"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyc-dH-hhv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="62.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(commentCount)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nw-aH-5bD">
+                                                    <rect key="frame" x="0.0" y="70.5" width="398" height="62"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(upvoteCount)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgg-cs-chW">
+                                                    <rect key="frame" x="0.0" y="140.5" width="398" height="62.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="J7q-Uz-lxM" firstAttribute="leading" secondItem="eLs-6A-Hgd" secondAttribute="leading" constant="8" id="3gU-oU-5iM"/>
+                                        <constraint firstAttribute="trailing" secondItem="J7q-Uz-lxM" secondAttribute="trailing" constant="8" id="wKm-ne-aA9"/>
+                                        <constraint firstAttribute="bottom" secondItem="J7q-Uz-lxM" secondAttribute="bottom" id="whk-VH-kyq"/>
+                                        <constraint firstItem="J7q-Uz-lxM" firstAttribute="top" secondItem="eLs-6A-Hgd" secondAttribute="top" id="yrg-dt-BDi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentCountLabel" destination="8Nw-aH-5bD" id="voZ-Kq-gVh"/>
+                                    <outlet property="titleLabel" destination="jyc-dH-hhv" id="azd-ER-EJb"/>
+                                    <outlet property="upvoteCountLabel" destination="tgg-cs-chW" id="YEy-9J-tTo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3jc-a3-39G" id="pgB-kd-tgu"/>
+                            <outlet property="delegate" destination="3jc-a3-39G" id="02B-e6-W8z"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="postSearchBar" destination="JG8-Hy-2np" id="DSd-kR-lhB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97l-Uk-8gh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-428.98550724637687" y="-203.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
